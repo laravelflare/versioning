@@ -1,1 +1,1 @@
-# Flare Versioning
+# Laravel Model Versioning
