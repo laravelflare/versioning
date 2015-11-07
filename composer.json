@@ -1,0 +1,38 @@
+{
+    "name": "laravelflare/versioning",
+    "description": "Versioning Module for Flare",
+    "keywords": [
+        "Laravel", "Flare", "Versioning", "Module", "Versions", "Revisions"
+    ],
+    "homepage": "https://github.com/laravelflare/versioning",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Laravel Flare",
+            "homepage": "https://github.com/laravelflare"
+        },
+        {
+            "name": "Aden Fraser",
+            "email": "aden@jacobbailey.com",
+            "homepage": "https://github.com/AdenFraser"
+        }
+    ],
+    "require": {
+        "laravelflare/flare": "0.2.x-dev",
+    },
+    "require-dev": {
+        "mockery/mockery": "~0.9.1",
+        "phpunit/phpunit": "~4.0",
+        "orchestra/testbench": "~3.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "LaravelFlare\\Versioning\\": "src/Versioning"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "LaravelFlare\\Versioning\\Tests\\": "tests/"
+        }
+    }
+}
