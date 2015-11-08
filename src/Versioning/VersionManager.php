@@ -4,5 +4,4 @@ namespace LaravelFlare\Versioning;
 
 class VersionManager
 {
-
 }
