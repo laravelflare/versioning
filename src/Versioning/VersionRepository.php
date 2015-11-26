@@ -7,7 +7,7 @@ use Laravelflare\Versioning\Version;
 class VersionRepository
 {
     /**
-     * Query Builder for Version Model
+     * Query Builder for Version Model.
      * 
      * @var \Illuminate\Database\Eloquent\Builder
      */
@@ -15,7 +15,7 @@ class VersionRepository
 
     public function __construct(Version $version)
     {
-        $this->version = $version->newQuery();
+        $this->version = $version;
     }
 
     public function find($id)
@@ -24,8 +24,8 @@ class VersionRepository
     }
 
     public function findByHash($hash)
-    {   return $this->version->whereHash($hash)->first();
-
+    {
+        return $this->version->whereHash($hash)->first();
     }
 
     public function get($id, $type)
@@ -45,9 +45,9 @@ class VersionRepository
 
     public function create($object)
     {
-        $newVersion = $this->version->newInstance(['hash' => sha1(time() . serialize($object)), 'object' => $object]);
+        $newVersion = $this->version->newInstance(['hash' => sha1(time().serialize($object)), 'object' => $object]);
 
-        $object->versions()->associate($newVersion);
+        $object->versions()->save($newVersion);
 
         return $newVersion;
     }
@@ -61,5 +61,4 @@ class VersionRepository
     {
         return $this->version->findByHash($hash)->delete();
     }
- 
 }

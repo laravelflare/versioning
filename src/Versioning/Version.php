@@ -31,7 +31,7 @@ class Version extends Model
     }
 
     /**
-     * Gets the Object Attribute, 
+     * Gets the Object Attribute,.
      *
      * Base64 decodes an Object and then unserializes it.
      * 
