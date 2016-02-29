@@ -15,7 +15,7 @@ class VersionRepository
 
     public function __construct(Version $version)
     {
-        $this->version = $version->newQuery();
+        $this->version = $version;
     }
 
     public function find($id)
@@ -47,7 +47,7 @@ class VersionRepository
     {
         $newVersion = $this->version->newInstance(['hash' => sha1(time().serialize($object)), 'object' => $object]);
 
-        $object->versions()->associate($newVersion);
+        $object->versions()->save($newVersion);
 
         return $newVersion;
     }
